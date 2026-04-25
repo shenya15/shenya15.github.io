@@ -2,45 +2,85 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>加入神压暗区交流群</title>
     <style>
-        body {
-            background: #1a1a2e;
-            color: #fff;
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            background: linear-gradient(135deg, #141E30, #243B55);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-family: "Microsoft YaHei", sans-serif;
+            color: #fff;
             text-align: center;
-            padding-top: 100px;
         }
-        .box {
-            display: inline-block;
-            background: rgba(255,255,255,0.1);
-            padding: 40px 60px;
-            border-radius: 16px;
+        .card{
+            background: rgba(255,255,255,0.08);
+            padding: 50px 60px;
+            border-radius: 20px;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         }
-        h1 {
-            font-size: 28px;
-            margin-bottom: 20px;
+        h1{
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #4FC3F7;
         }
-        .qq {
-            font-size: 22px;
-            color: #4fc3f7;
+        .group-info{
+            font-size: 18px;
+            margin: 10px 0 30px;
+            color: #ECEFF1;
+        }
+        .join-btn{
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(90deg, #1E88E5, #42A5F5);
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 50px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(30,136,229,0.4);
+            border: none;
+            cursor: pointer;
+        }
+        .join-btn:hover{
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(30,136,229,0.6);
         }
     </style>
 </head>
-
 <body>
-    <div class="box">
+    <div class="card">
         <h1>神压暗区交流群</h1>
-        <p class="qq">QQ群号：1033972581</p>
+        <div class="group-info">
+            QQ群号：1033972581<br>
+            暗区突围玩家交流
+        </div>
+        <button class="join-btn" onclick="joinGroup()">点击加入QQ群</button>
     </div>
 
     <script>
-        // 打开就弹出询问
-        let join = confirm("是否加入 神压暗区交流群？");
-        if (join) {
-            // 跳转到QQ加群链接
-            window.location.href = "https://qm.qq.com/cgi-bin/qm/qr?k=j2K8JzZJzJzJzJzJzJzJzJz&jump_from=webapi&authKey=j2K8JzZJzJzJzJzJzJzJzJzJzJz";
+        // 你的QQ群官方链接
+        const groupUrl = "https://qun.qq.com/universal-share/share?ac=1&authKey=jPO6%2BVznP0LjnRj1TleZ80P5ry940KHHp2C333cV0xbN1bYRjcx1K0PYbZ21GtyK&busi_data=eyJncm91cENvZGUiOiIxMDMzOTcyNTgxIiwidG9rZW4iOiJIZTQ4YUxvTm5vaE96NzFpeWxnYUVRZFN4YUJ2SlF5Zi81UFVxcUlVdVVhb1p3WXdYVmVkUnB4L05MYTQwcFQrIiwidWluIjoiMTk1ODY2NzE3OCJ9&data=-QflrFrnKxMK7hAeSDWThFq8p2Es3kZlXlRBnuAvt1jD30yWw9ePbPjW7s62t9ind1NTuM9EfymGpl_jnx152Q&svctype=4&tempid=h5_group_info";
+
+        // 加入群聊
+        function joinGroup(){
+            window.open(groupUrl, "_blank");
+        }
+
+        // 页面加载完成自动弹窗
+        window.onload = function(){
+            if(confirm("是否加入 【神压暗区交流群】？")){
+                joinGroup();
+            }
         }
     </script>
 </body>
